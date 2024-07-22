@@ -1,0 +1,225 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 246, 247, 255;
+  --background-start-rgb: 24, 28, 31;
+  --background-end-rgb: 24, 28, 31;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 246, 247, 255;
+    --background-start-rgb: 24, 28, 31;
+    --background-end-rgb: 24, 28, 31;
+  }
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  font-family: 'Lato', sans-serif; 
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #72edf2, #5151e5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Use Bebas Neue for specific elements */
+.bebas-neue {
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.bebas-neue-400 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+}
+
+/* Use Bebas lato for specific elements */
+.lato {
+  font-family: 'Lato', sans-serif;
+}
+
+.lato-100 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+}
+
+.lato-300 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+.lato-400 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+.lato-700 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+}
+
+.lato-900 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+}
+
+/* Use plus-jakarta-sans for specific elements */
+.plus-jakarta-sans {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.plus-jakarta-sans-200 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 200;
+}
+
+.plus-jakarta-sans-300 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 300;
+}
+
+.plus-jakarta-sans-400 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+}
+
+.plus-jakarta-sans-500 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500;
+}
+
+.plus-jakarta-sans-600 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+}
+
+.plus-jakarta-sans-700 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+}
+
+.plus-jakarta-sans-800 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-left {
+  animation: slideInFromLeft 2s ease-out forwards; /* Change duration to 2s */
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-right {
+  animation: slideInFromRight 2s ease-out forwards; /* Change duration to 2s */
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-bottom {
+  animation: slideInFromBottom 1s ease-out forwards;
+}
+
+
+.text-3d {
+  position: relative;
+  color: #fff;
+  text-shadow: 
+    1px 1px 0 #000,
+    2px 2px 0 #000,
+    3px 3px 0 #000,
+    4px 4px 0 #000,
+    5px 5px 0 #000;
+  transform: rotateX(10deg) rotateY(10deg);
+}
+
+.gradient-text {
+  background: linear-gradient(180deg, #907CFF, #00C5DF, #002594, #00C5DF, #907CFF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+.gradient-homepage-text {
+  background: linear-gradient(90deg, #4F1877, #6A3582, #A156F0, #F7C6FE, #D94B9D, #4A135D);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+.quadrant-circle {
+  position: relative;
+  display: inline-block;
+}
+
+.quadrant-circle::after {
+  content: "";
+  position: absolute;
+  width: 20px; /* Adjust size as needed */
+  height: 20px; /* Adjust size as needed */
+  border-radius: 50%;
+  border: 2px solid #fff; /* Adjust border color as needed */
+  bottom: -10px; /* Adjust position as needed */
+  left: 50%; /* Adjust position as needed */
+  transform: translateX(-70%);
+  clip-path: polygon(75% 0%, 100% 0%, 100% 100%, 50% 100%);
+}
+
+.border-gradient {
+  position: relative;
+  padding: 20px; /* Adjust padding to suit your needs */
+  border-radius: 8px; /* Adjust border radius if needed */
+  overflow: hidden; /* Ensure the pseudo-element doesn't overflow */
+  background: linear-gradient(black, black) padding-box, linear-gradient(90deg, #907CFF,#00C5DF,#002594,#00C5DF, #907CFF) border-box;
+  border: 4px solid transparent; /* Adjust border width to suit your needs */
+}
+
